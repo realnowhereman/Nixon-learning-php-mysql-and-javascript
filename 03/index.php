@@ -76,4 +76,41 @@ function longdate($timestamp) {
 }
 
 echo longdate(time());
+echo "<br>";
+echo longdate(time() - 17 * 24 * 60 * 60);
+
+echo "<hr>";
+function longdate2($timestamp) {
+  $temp = date("l F jS Y", $timestamp);
+  return "Дата: $temp";
+}
+
+echo longdate2(time());
+echo "<hr>";
+
+$temp = "Дата: ";
+echo $temp . longdate(time());
+echo "<hr>";
+
+function longdate3($text, $timestamp) {
+  return $text . date("l F jS Y", $timestamp);
+}
+
+$label = "Dата: ";
+echo longdate3($label, time());
+echo "<hr>";
+function staticTest() {
+  static $count = 0;
+  echo $count;
+  $count++;
+}
+
+staticTest();
+echo "<br>";
+staticTest();
+echo "<br>";
+staticTest();
+echo "<br>";
+staticTest();
+echo "<hr>";
 ?>
