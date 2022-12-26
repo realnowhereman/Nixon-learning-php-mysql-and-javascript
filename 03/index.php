@@ -114,3 +114,7 @@ echo "<br>";
 staticTest();
 echo "<hr>";
 ?>
+<?php
+// phpinfo();
+/* multiline comment */
+?>
