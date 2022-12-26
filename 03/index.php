@@ -60,4 +60,20 @@
   _END;
   echo "<hr>";
   echo $out;
+  echo "<hr>";
+$number = 12345 * 67890;
+echo substr($number, 3, 1);
+echo "<hr>";
+$pi = "3.1415927";
+$radius = 5;
+echo $pi * $radius ** 2;
+echo "<hr>";
+$b = 5;
+$b ? print "TRUE" : print "FALSE";
+echo "<hr>";
+function longdate($timestamp) {
+  return date("l F jS Y", $timestamp);
+}
+
+echo longdate(time());
 ?>
