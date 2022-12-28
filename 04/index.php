@@ -124,7 +124,7 @@
   echo "<br>";
   echo "<hr>";
 
-  $fp = fopen("text.txt", 'wb') or die ("Failed to create file");
+  $fp = fopen("text.txt", 'wb') or die ("Failed to create file"); //открывается файл (создается) и указатель на него возвращается переменной $fp
   $data = <<<_END
   text1
   text2
@@ -136,4 +136,30 @@
       fclose($fp);
     }
   }
+
+  $j = 11;
+  while ($j > -10) {
+    $j--;
+    if ($j == 0) {
+      echo "на ноль делить нельзя! <br>";
+      continue;
+    }
+    echo (10 / $j) . "<br>";
+  }
+
+  echo "<hr>";
+  echo "<br>";
+  echo "<hr>";
+
+  $a = 56;
+  $b = 12;
+  $c = $a / $b;
+  $d = (int) ($a / $b); // принудительное преобразование в целое число
+  $e = round($a / $b); // округление
+  $f = intval($a / $b); // возвращает целое значение (часть)
+  echo $c . "<br>" . $d . "<br>" . $e . "<br>" . $f;
+
+  echo "<hr>";
+  echo "<br>";
+  echo "<hr>";
 ?>
