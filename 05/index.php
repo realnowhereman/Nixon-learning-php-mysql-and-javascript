@@ -8,13 +8,117 @@
 </head>
 <body>
 <?php
-  //Ch-05
-  echo date("l") . "<br>";
-  // echo phpinfo();
-  echo strrev(".dlrow olleH") . "<br>";
-echo str_repeat("Hip", 2) . "<br>";
-echo strtoupper("hooray!");
-echo "<hr><a href=\"https://stackoverflow.com/questions/60678203/is-it-possible-to-use-live-server-for-php-with-autoreload-on-save\" target=\"_blank\">php server autoreload</a><hr>"
+    //Ch-05
+    echo date("l") . "<br>";
+    // echo phpinfo();
+    echo strrev(".dlrow olleH") . "<br>";
+  echo str_repeat("Hip", 2) . "<br>";
+  echo strtoupper("hooray!");
+  echo "<hr><a href=\"https://stackoverflow.com/questions/60678203/is-it-possible-to-use-live-server-for-php-with-autoreload-on-save\" target=\"_blank\">php server autoreload</a><hr>";
+
+  $lowered = mb_strtolower("ПреДложеНИе Для пРиМеРа.");
+  $lowered2 = mb_strtolower("люБОЕ нУжное Вам количество Букв и Знаков Пунктуации");
+  echo mb_strtolower("aNY # of Letters and Punctuation you WANT");
+  echo "<br>";
+  echo $lowered;
+  echo "<br>";
+  echo $lowered2;
+  echo "<hr>";
+  echo setlocale(LC_CTYPE, '');
+  echo "<hr>";
+  echo "<br>";
+  echo '<hr>';
+  print(5 - 8);
+  echo "<br>";
+  print(abs(5 - 8));
+
+  echo "<hr>";
+  echo "<br>";
+  echo '<hr>';
+
+  $temp = ucfirst(mb_strtolower("РаЗнЫе БуКвЫ."));
+  echo $temp;
+
+  echo "<hr>";
+  echo "<br>";
+  echo '<hr>';
+
+  function fix_names($n1, $n2, $n3) {
+  $n1 = ucfirst(mb_strtolower($n1));
+  $n2 = ucfirst(mb_strtolower($n2));
+  $n3 = ucfirst(mb_strtolower($n3));
+
+  return $n1 . " " . $n2 . " " . $n3;
+  }
+
+  echo fix_names("wiLLiaM", "henry", "gatES");
+
+  echo "<hr>";
+  echo "<br>";
+  echo '<hr>';
+
+  function fix_names2($n1, $n2, $n3) {
+  $n1 = ucfirst(mb_strtolower($n1));
+  $n2 = ucfirst(mb_strtolower($n2));
+  $n3 = ucfirst(mb_strtolower($n3));
+
+  return [$n1, $n2, $n3];
+  }
+
+  $names2 = fix_names2("wiLLiaM", "henry", "gatES");
+  echo $names2[0] . " " . $names2[1] . " " . $names2[2];
+
+  echo "<hr>";
+  echo "<br>";
+  echo '<hr>';
+
+  $a1 = "WILLIAM";
+  $a2 = "henry";
+  $a3 = "gatES";
+
+  echo $a1 . " " . $a2 . " " . $a3 . "<br>";
+
+  function fix_names3(&$n1, &$n2, &$n3) {
+  $n1 = ucfirst(strtolower($n1));
+  $n2 = ucfirst(strtolower($n2));
+  $n3 = ucfirst(strtolower($n3));
+  }
+
+  fix_names3($a1, $a2, $a3);
+  echo $a1 . " " . $a2 . " " . $a3;
+
+  echo "<hr>";
+  echo "<br>";
+  echo '<hr>';
+
+  $a1 = "WILLIAM";
+  $a2 = "henry";
+  $a3 = "gatES";
+
+  echo $a1 . " " . $a2 . " " . $a3 . "<br>";
+
+  function fix_names4() {
+    global $a1; $a1 = ucfirst(strtolower($a1));
+    global $a2; $a2 = ucfirst(strtolower($a2));
+    global $a3; $a3 = ucfirst(strtolower($a3));
+  }
+
+  fix_names4();
+  echo $a1 . " " . $a2 . " " . $a3;
+
+  echo "<hr>";
+  echo "<br>";
+  echo '<hr>';
+
+  if (function_exists("array_combine")) {
+    echo "Функция существует";
+  }
+  else {
+    echo "Функция не существует, желательно создать ее самостоятельно";
+  }
+
+  print "<br>" . phpversion();
+
 ?>
 </body>
 </html>
