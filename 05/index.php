@@ -119,6 +119,37 @@
 
   print "<br>" . phpversion();
 
+  echo "<hr>";
+  echo "<br>";
+  echo '<hr>';
+
+echo '<h3>Objects, classes</h3>';
+
+$object = new User;
+print_r($object);
+
+class User {
+  public $name, $password;
+  function save_user() {
+    echo "Здесь код, сохраняющий данные пользователя <br>";
+  }
+}
+
+$temp = new User('name', 'password');
+
+echo "<hr>";
+echo "<br>";
+echo '<hr>';
+
+$object2 = new User;
+print_r($object2);
+echo "<br>";
+$object2 -> name = "Joe";
+$object2 -> password = "mypass";
+print_r($object2);
+echo "<br>";
+$object2 -> save_user();
+
 ?>
 </body>
 </html>
