@@ -150,6 +150,24 @@ print_r($object2);
 echo "<br>";
 $object2 -> save_user();
 
+$object3 = new User3();
+$object3 -> name = "Alice";
+$object4 = $object3;
+$object4->name = "Amy";
+echo "object3 name = " . $object3->name . "<br>";
+echo "object4 name = " . $object3->name . "<hr>";
+
+$object5 = new User3;
+$object5->name = "Alice";
+$object6 = clone $object5;
+$object6->name = "Amy";
+echo "object5 name = " . $object5 -> name . "<br>";
+echo "object6 name = " . $object6 -> name . "<br>";
+
+class User3 {
+  public $name;
+}
+
 ?>
 </body>
 </html>
