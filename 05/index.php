@@ -117,7 +117,24 @@
     echo "Функция не существует, желательно создать ее самостоятельно";
   }
 
-  print "<br>" . phpversion();
+  print "<br>" . phpversion() . "<hr>";
+
+$read = file('names.txt');
+foreach ($read as $line) {
+  echo $line . ';' . '<hr color="red" align="center" width="30%">';
+}
+
+$myfile = fopen('file.txt', 'w');
+$txt = "simple text\n";
+fwrite($myfile, $txt);
+$txt = "simple text 2\n";
+fwrite($myfile, $txt);
+fclose($myfile);
+$myfile = fopen('file.txt', 'a');
+fwrite($myfile, "finish\n");
+fclose($myfile);
+
+
 
 ?>
 </body>
