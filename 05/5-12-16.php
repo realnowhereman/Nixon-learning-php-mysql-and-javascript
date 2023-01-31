@@ -20,6 +20,16 @@
     }
   }
 
+  class User3 {
+
+  }
+
+  class User4 {
+    static function pwdString() {
+      echo 'Please enter your password';
+    }
+  }
+
 $object1 = new User();
 $object1->name = 'Alice';
 $object2 = clone $object1;
@@ -39,6 +49,15 @@ echo $object3->getPassword() . '<br>';
 $object4 = new User2('John', '12345');
 echo $object4->name . '<br>';
 echo $object4->password;
+
+$object5 = new User3();
+$object5->name = 'Obj5Name';
+$object5->password = 'Obj5Pass';
+
+echo $object5->name . '<br>';
+echo $object5->password . '<hr>';
+
+User4::pwdString();
 ?>
 
 <!DOCTYPE html>
