@@ -17,5 +17,8 @@
   <script>
     document.write("Сегодня " + Date())
   </script>
+  <?php echo "<hr>"; ?>
+  <?php echo "<br>"; ?>
+  
 </body>
 </html>
