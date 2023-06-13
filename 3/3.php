@@ -34,6 +34,23 @@
   echo "<br>";
   echo 6 + 8;
   echo "<br>";
+
+  $y = 0;
+  if ($y-- == 0) echo $y . "<br>";
+
+  $x = 1;
+  if (--$x == 0) echo $x;
+  echo "<hr>";
+
+  $msgs = "100+";
+  echo "У вас " . $msgs . " сообщений";
+  echo "<br>";
+  $text = "Hello";
+  $text .= " world!";
+  echo $text;
+  echo "<hr>";
+  $number = 12345 * 67890;
+  echo substr($number, 3, 1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
