@@ -50,8 +50,44 @@
   echo $text;
   echo "<hr>";
   $number = 12345 * 67890;
-  echo substr($number, 3, 1);
-?>
+  echo substr($number, 3, 1) . "<br>";
+  echo "Это строка " . __LINE__ . " в файле " . __FILE__;
+  echo "<br>";
+  $b = 0;
+  $b ? print "TRUE" : print "FALSE";
+  echo "<br>";
+  
+  function longdate($timestamp) {
+    return date("l F jS Y", $timestamp);
+  }
+
+  echo "today: " . longdate(time()) . "<br>";
+  echo "17 days before: " . longdate(time() - 17 * 24 * 60 * 60) . "<br>";
+
+  function longdate2($timestamp) {
+    $temp = date("l F jS Y", $timestamp);
+    return "Дата: $temp";
+  }
+
+  echo longdate2(time()) . "<br>";
+
+  function test() {
+    static $count = 0;
+    echo $count;
+    $count++;
+  }
+
+  test();
+  echo "<br>";
+  test();
+  echo "<br>";
+  test();
+  echo "<br>";
+  test();
+  echo "<br>";
+  print_r($GLOBALS);
+  echo "<br>";
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +97,6 @@
   <title>3</title>
 </head>
 <body>
-  
+  <? /*echo "<h3>hhhhhhhhhhh</h3>";*/ phpinfo();?>
 </body>
 </html>
